@@ -28,8 +28,27 @@ int main()
   else
   {
    //make scoreboard and fill it with zeros
-  
+    vector <vector <int> > board;
+    board.resize(teams);
+    for(int r=0; r<teams; r++)
+    {
+        board[r].resize(periods);
+        for(int c=0; c<periods; c++)
+        {
+            board[r][c]=0;
+        }
+    }
    //once created, display the scoreboard
+    int playerNum = 1;
+    for(int row=0; row<board.size(); row++)
+    {
+        cout<< "player " << playerNum++ << ": "; 
+        for(int col=0; col<board[row].size(); col++)
+        {
+          cout <<board[row][col] << '|';
+        }
+        cout <<endl;
+    }
   }
   return 0;
 }
